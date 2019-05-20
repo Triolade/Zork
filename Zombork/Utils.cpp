@@ -30,7 +30,8 @@ bool Utils::isItem(const common_defs::tokens token) {
 	vector<common_defs::tokens> items = {
 		common_defs::CURE,
 		common_defs::DOOR,
-		common_defs::REVOLVER
+		common_defs::REVOLVER,
+		common_defs::CASETTE
 	};
 
 	return find(items.begin(), items.end(), token) != items.end();

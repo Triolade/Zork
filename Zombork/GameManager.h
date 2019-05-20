@@ -10,6 +10,7 @@ public:
 		return instance;
 	};
 
+	void startGame();
 	bool hasEnded();
 	void setGameOver();
 

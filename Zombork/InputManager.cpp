@@ -29,19 +29,20 @@ vector<common_defs::tokens> InputManager::tokenize(string input) {
 	vector<string> unprocessed_tokens = Utils::split(input, ' ');
 	const int num_unprocessed_tokens = unprocessed_tokens.size();
 	vector<common_defs::tokens> tokens = vector<common_defs::tokens>();
+
 	int i = 0;
-	bool invalidToken = false;
-	while (!invalidToken & i < num_unprocessed_tokens) {
+	bool invalidTokenDetected = false;
+	while (!invalidTokenDetected & i < num_unprocessed_tokens) {
 		if (isValidToken(unprocessed_tokens[i])) {
 			tokens.push_back(tokens_mapping[unprocessed_tokens[i]]);
 		}
 		else {
-			invalidToken = true;
+			invalidTokenDetected = true;
 		}
 		++i;
 	}
 
-	if (invalidToken) {
+	if (invalidTokenDetected) {
 		throw new InvalidInputException();
 	}
 

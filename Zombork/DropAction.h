@@ -3,9 +3,12 @@
 class DropAction : public Action
 {
 public:
-	DropAction();
+	DropAction(common_defs::tokens item);
 	
 	void execute() override;
 	string getGeneratedOutput() override;
+
+private:
+	common_defs::tokens droppedItem;
 };
 

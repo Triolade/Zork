@@ -46,6 +46,9 @@ Action* Interpreter::interpretOneTokenAction() {
 	else if (tokens[0] == common_defs::HELP) {
 		interpreted_action = ActionFactory::createHelpAction();
 	}
+	else if (tokens[0] == common_defs::INVENTORY) {
+		interpreted_action = ActionFactory::createInventoryAction();
+	}
 	else {
 		interpreted_action = ActionFactory::createInvalidAction();
 	}

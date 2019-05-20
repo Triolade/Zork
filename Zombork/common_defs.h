@@ -8,6 +8,7 @@ namespace common_defs {
 		DROP,
 		GO,
 		HELP,
+		INVENTORY,
 		LOOK,
 		OPEN,
 		PUT,
@@ -25,6 +26,7 @@ namespace common_defs {
 		CURE,
 		DOOR,
 		REVOLVER,
+		CASETTE,
 
 		// ENTITIES
 		ZOMBI,

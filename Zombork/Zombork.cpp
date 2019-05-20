@@ -6,6 +6,8 @@
 #include "Action.h"
 
 int main() {
+	GameManager::instance().startGame();
+
 	while (!GameManager::instance().hasEnded()) {
 		Action* introducedAction = InputManager::instance().getActionFromInput();
 		introducedAction->execute();

@@ -3,9 +3,12 @@
 class TakeAction : public Action
 {
 public:
-	TakeAction();
+	TakeAction(common_defs::tokens item);
 	
 	void execute() override;
 	string getGeneratedOutput() override;
+
+private: 
+	common_defs::tokens pickedItem;
 };
 

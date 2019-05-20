@@ -9,10 +9,10 @@ EmptyAction::EmptyAction()
 
 void EmptyAction::execute()
 {
-
+	generatedOutput = "Pardon?";
 }
 
 string EmptyAction::getGeneratedOutput()
 {
-	return "";
+	return generatedOutput;
 }

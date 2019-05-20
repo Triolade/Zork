@@ -164,13 +164,19 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Interpreter.h" />
     <ClInclude Include="InvalidAction.h" />
+    <ClInclude Include="InventoryAction.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="LookAction.h" />
     <ClInclude Include="OpenAction.h" />
     <ClInclude Include="OutputManager.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PutAction.h" />
+    <ClInclude Include="Room.h" />
     <ClInclude Include="TakeAction.h" />
     <ClInclude Include="Utils.h" />
+    <ClInclude Include="World.h" />
+    <ClInclude Include="Zombi.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ActionFactory.cpp" />
@@ -184,6 +190,8 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Interpreter.cpp" />
     <ClCompile Include="InvalidAction.cpp" />
+    <ClCompile Include="InventoryAction.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="LookAction.cpp" />
     <ClCompile Include="OpenAction.cpp" />
     <ClCompile Include="OutputManager.cpp" />
@@ -193,9 +201,13 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PutAction.cpp" />
+    <ClCompile Include="Room.cpp" />
     <ClCompile Include="TakeAction.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="World.cpp" />
+    <ClCompile Include="Zombi.cpp" />
     <ClCompile Include="Zombork.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

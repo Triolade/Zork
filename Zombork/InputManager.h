@@ -31,6 +31,7 @@ private:
 		{"DROP", common_defs::DROP},
 		{"GO", common_defs::GO},
 		{"HELP", common_defs::HELP},
+		{"INVENTORY", common_defs::INVENTORY},
 		{"LOOK", common_defs::LOOK},
 		{"OPEN", common_defs::OPEN},
 		{"PUT", common_defs::PUT},
@@ -47,7 +48,8 @@ private:
 		// ITEMS
 		{"CURE", common_defs::CURE},
 		{"DOOR", common_defs::DOOR},
-		{"REVOLVER", common_defs::REVOLVER}
+		{"REVOLVER", common_defs::REVOLVER},
+		{"CASETTE", common_defs::CASETTE}
 	};
 
 

@@ -23,7 +23,7 @@ Action* ActionFactory::createHelpAction()
 
 Action* ActionFactory::createGoAction(common_defs::tokens direction)
 {
-	return new GoAction();
+	return new GoAction(direction);
 }
 
 Action* ActionFactory::createOpenAction(common_defs::tokens item)
@@ -31,19 +31,25 @@ Action* ActionFactory::createOpenAction(common_defs::tokens item)
 	return new OpenAction();
 }
 
+Action* ActionFactory::createInventoryAction()
+{
+	return new InventoryAction();
+}
+
+
 Action* ActionFactory::createDropAction(common_defs::tokens item)
 {
-	return new DropAction();
+	return new DropAction(item);
 }
 
 Action* ActionFactory::createTakeAction(common_defs::tokens item)
 {
-	return new TakeAction();
+	return new TakeAction(item);
 }
 
 Action* ActionFactory::createCheckAction(common_defs::tokens item)
 {
-	return new CheckAction();
+	return new CheckAction(item);
 }
 
 Action* ActionFactory::createAttackAction(common_defs::tokens enemy, common_defs::tokens weapon)

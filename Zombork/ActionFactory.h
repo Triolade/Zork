@@ -3,6 +3,7 @@
 #include "InvalidAction.h"
 #include "LookAction.h"
 #include "HelpAction.h"
+#include "InventoryAction.h"
 #include "GoAction.h"
 #include "OpenAction.h"
 #include "DropAction.h"
@@ -18,6 +19,7 @@ public:
 
 	static Action* createLookAction();
 	static Action* createHelpAction();
+	static Action* createInventoryAction();
 
 	static Action* createGoAction(common_defs::tokens direction);
 	static Action* createOpenAction(common_defs::tokens item);
