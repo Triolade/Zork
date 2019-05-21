@@ -1,6 +1,7 @@
 #pragma once
 #include "Room.h"
 #include "Item.h"
+#include "Weapon.h"
 
 class Player
 {
@@ -11,6 +12,8 @@ public:
 		// Instantiated on first use.
 		return instance;
 	};
+
+	void spawnPlayer();
 
 	string lookAround();
 	bool canGoToDirection(common_defs::tokens direction);
@@ -24,12 +27,23 @@ public:
 	bool isInInventory(common_defs::tokens item);
 	string dropItem(common_defs::tokens item);
 
-	string describeInventory();
+	string describeSelf();
 	string describeItemFromInventory(common_defs::tokens item);
+
+	bool currentWeaponIs(common_defs::tokens weapon);
+	bool hasWeaponEquipped();
+	void dropCurrentWeapon();
+	string pickWeapon(common_defs::tokens weapon);
+	
+	bool canFindEnemy(common_defs::tokens item);
+	string attack(common_defs::tokens enemy);
+
 
 private:
 	Room* currentRoom;
 	list<Item> inventory;
-
+	Weapon equippedWeapon;
+	int lifeCounter;
+	bool hasEquippedWeapon;
 };
 

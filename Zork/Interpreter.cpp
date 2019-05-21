@@ -73,6 +73,9 @@ Action* Interpreter::interpretTwoTokensAction() {
 	else if (tokens[0] == common_defs::CHECK & Utils::isItem(tokens[1])) {
 		interpreted_action = ActionFactory::createCheckAction(tokens[1]);
 	}
+	else if (tokens[0] == common_defs::ATTACK & Utils::isEnemy(tokens[1])) {
+		interpreted_action = ActionFactory::createAttackAction(tokens[1]);
+	}
 	else {
 		interpreted_action = ActionFactory::createInvalidAction();
 	}
@@ -83,14 +86,6 @@ Action* Interpreter::interpretTwoTokensAction() {
 Action* Interpreter::interpretFourTokensAction() {
 	Action* interpreted_action;
 	if (
-		tokens[0] == common_defs::ATTACK
-		& Utils::isEntity(tokens[1])
-		& tokens[2] == common_defs::WITH
-		& Utils::isItem(tokens[3])
-		) {
-		interpreted_action = ActionFactory::createAttackAction(tokens[1], tokens[3]);
-	}
-	else if (
 		tokens[0] == common_defs::OPEN
 		& Utils::isItem(tokens[1])
 		& tokens[2] == common_defs::WITH

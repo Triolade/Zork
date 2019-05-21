@@ -2,6 +2,7 @@
 class Item
 {
 public:
+	Item() {};
 	Item(string name, common_defs::tokens token);
 
 	string getName();

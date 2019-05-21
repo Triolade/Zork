@@ -26,8 +26,8 @@ public:
 	static Action* createDropAction(common_defs::tokens item);
 	static Action* createTakeAction(common_defs::tokens item);
 	static Action* createCheckAction(common_defs::tokens item);
+	static Action* createAttackAction(common_defs::tokens enemy);
 
-	static Action* createAttackAction(common_defs::tokens enemy, common_defs::tokens weapon);
 	static Action* createOpenAction(common_defs::tokens item, common_defs::tokens opener);
 	static Action* createPutAction(common_defs::tokens item, common_defs::tokens container);
 

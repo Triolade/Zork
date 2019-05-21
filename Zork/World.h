@@ -16,8 +16,10 @@ public:
 
 private:
 	enum room {
-		FORGOTTEN_ROOM,
-		NORTH_CORRIDOR_2ND_FLOOR
+		DUNGEON_ENTRANCE,
+		DUNGEON_HALL,
+		WOLF_DEN,
+		CURSED_APPLE_TREE
 	};
 
 	map<room, Room> rooms;
@@ -25,7 +27,7 @@ private:
 	void spawnRooms();
 	void spawnConnections();
 	void spawnItems();
-	void spawnZombies();
+	void spawnEnemies();
 	void spawnPlayer();
 };
 

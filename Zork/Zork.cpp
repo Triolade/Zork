@@ -14,6 +14,8 @@ int main() {
 		OutputManager::instance().printOutput(introducedAction->getGeneratedOutput());
 		delete introducedAction;
 	}
+
+	GameManager::instance().endGame();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

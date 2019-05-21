@@ -6,7 +6,8 @@ public:
 
 	static bool isDirection(const common_defs::tokens token);
 	static bool isItem(const common_defs::tokens token);
-	static bool isAction(const common_defs::tokens token);
-	static bool isEntity(const common_defs::tokens token);
+	static bool isWeapon(const common_defs::tokens token);
+;	static bool isAction(const common_defs::tokens token);
+	static bool isEnemy(const common_defs::tokens token);
 
 };

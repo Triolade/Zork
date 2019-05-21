@@ -22,8 +22,9 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{BAEBDF9D-0CE5-4983-89DC-1E35D8EA59A5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Zombork</RootNamespace>
+    <RootNamespace>Zork</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>Zork</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -175,8 +176,9 @@
     <ClInclude Include="Room.h" />
     <ClInclude Include="TakeAction.h" />
     <ClInclude Include="Utils.h" />
+    <ClInclude Include="Weapon.h" />
     <ClInclude Include="World.h" />
-    <ClInclude Include="Zombi.h" />
+    <ClInclude Include="Enemy.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ActionFactory.cpp" />
@@ -206,9 +208,10 @@
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="TakeAction.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="World.cpp" />
-    <ClCompile Include="Zombi.cpp" />
-    <ClCompile Include="Zombork.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Zork.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

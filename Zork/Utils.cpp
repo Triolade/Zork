@@ -28,13 +28,26 @@ bool Utils::isDirection(const common_defs::tokens token) {
 
 bool Utils::isItem(const common_defs::tokens token) {
 	vector<common_defs::tokens> items = {
-		common_defs::CURE,
-		common_defs::DOOR,
-		common_defs::REVOLVER,
-		common_defs::CASETTE
+		common_defs::POTION,
+		common_defs::KEY,
+		common_defs::CURSED_APPLE,
+
+		common_defs::SWORD,
+		common_defs::BOW,
+		common_defs::KNIFE
 	};
 
 	return find(items.begin(), items.end(), token) != items.end();
+}
+
+bool Utils::isWeapon(const common_defs::tokens token) {
+	vector<common_defs::tokens> weapons = {
+		common_defs::SWORD,
+		common_defs::BOW,
+		common_defs::KNIFE
+	};
+
+	return find(weapons.begin(), weapons.end(), token) != weapons.end();
 }
 
 bool Utils::isAction(const common_defs::tokens token) {
@@ -53,9 +66,11 @@ bool Utils::isAction(const common_defs::tokens token) {
 	return find(actions.begin(), actions.end(), token) != actions.end();
 }
 
-bool Utils::isEntity(const common_defs::tokens token) {
+bool Utils::isEnemy(const common_defs::tokens token) {
 	vector<common_defs::tokens> entities = {
-		common_defs::ZOMBI
+		common_defs::WOLF,
+		common_defs::ELF,
+		common_defs::DRAGON
 	};
 
 	return find(entities.begin(), entities.end(), token) != entities.end();

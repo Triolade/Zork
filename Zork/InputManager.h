@@ -31,11 +31,13 @@ private:
 		{"DROP", common_defs::DROP},
 		{"GO", common_defs::GO},
 		{"HELP", common_defs::HELP},
-		{"INVENTORY", common_defs::INVENTORY},
+		{"SELF", common_defs::INVENTORY},
 		{"LOOK", common_defs::LOOK},
 		{"OPEN", common_defs::OPEN},
 		{"PUT", common_defs::PUT},
 		{"TAKE", common_defs::TAKE},
+		{"PICK", common_defs::TAKE},
+
 
 		// DIRECTIONS
 		{"NORTH", common_defs::NORTH},
@@ -46,10 +48,23 @@ private:
 		{"DOWN", common_defs::DOWN},
 
 		// ITEMS
-		{"CURE", common_defs::CURE},
-		{"DOOR", common_defs::DOOR},
-		{"REVOLVER", common_defs::REVOLVER},
-		{"CASETTE", common_defs::CASETTE}
+		{"POTION", common_defs::POTION},
+		{"KEY", common_defs::KEY},
+		{"APPLE", common_defs::CURSED_APPLE},
+
+		// WEAPONS
+		{"SWORD", common_defs::SWORD},
+		{"BOW", common_defs::BOW},
+		{"KNIFE", common_defs::KNIFE},
+
+		// ENEMIES
+		{"WOLF", common_defs::WOLF},
+		{"ELF", common_defs::ELF},
+		{"DRAGON", common_defs::DRAGON},
+
+		// CONNECTORS
+		{"WITH", common_defs::WITH},
+		{"INTO", common_defs::INTO}
 	};
 
 

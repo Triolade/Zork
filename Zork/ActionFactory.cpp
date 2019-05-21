@@ -52,9 +52,9 @@ Action* ActionFactory::createCheckAction(common_defs::tokens item)
 	return new CheckAction(item);
 }
 
-Action* ActionFactory::createAttackAction(common_defs::tokens enemy, common_defs::tokens weapon)
+Action* ActionFactory::createAttackAction(common_defs::tokens enemy)
 {
-	return new AttackAction();
+	return new AttackAction(enemy);
 }
 
 Action* ActionFactory::createOpenAction(common_defs::tokens item, common_defs::tokens opener)

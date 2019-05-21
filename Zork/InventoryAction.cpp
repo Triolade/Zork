@@ -5,7 +5,7 @@
 
 void InventoryAction::execute()
 {
-	generatedOutput = Player::instance().describeInventory();
+	generatedOutput = Player::instance().describeSelf();
 }
 
 string InventoryAction::getGeneratedOutput()

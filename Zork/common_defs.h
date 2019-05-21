@@ -23,13 +23,19 @@ namespace common_defs {
 		DOWN,
 
 		// ITEMS
-		CURE,
-		DOOR,
-		REVOLVER,
-		CASETTE,
+		POTION,
+		KEY,
+		CURSED_APPLE,
 
-		// ENTITIES
-		ZOMBI,
+		// WEAPONS
+		SWORD,
+		BOW,
+		KNIFE,
+
+		// ENEMIES
+		WOLF,
+		ELF,
+		DRAGON,
 
 		// CONNECTORS
 		WITH,

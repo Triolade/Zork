@@ -11,11 +11,12 @@ public:
 	};
 
 	void startGame();
+	void endGame();
 	bool hasEnded();
-	void setGameOver();
+	void setGameOver(bool deadPlayer);
 
 private:
-
+	bool playerIsDead;
 	bool gameOver;
 };
 
