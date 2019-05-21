@@ -30,6 +30,9 @@ public:
 	string getDirectionInfo(common_defs::tokens direction);
 	Room* getRoomInDirection(common_defs::tokens direction);
 
+	bool hasLockedDoor();
+	void openLockedDoor();
+
 	string getDescription();
 	void setDescription(string description);
 

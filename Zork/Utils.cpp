@@ -18,9 +18,7 @@ bool Utils::isDirection(const common_defs::tokens token) {
 		common_defs::NORTH,
 		common_defs::SOUTH,
 		common_defs::EAST,
-		common_defs::WEST,
-		common_defs::UP,
-		common_defs::DOWN
+		common_defs::WEST
 	};
 
 	return find(directions.begin(), directions.end(), token) != directions.end();
@@ -28,9 +26,10 @@ bool Utils::isDirection(const common_defs::tokens token) {
 
 bool Utils::isItem(const common_defs::tokens token) {
 	vector<common_defs::tokens> items = {
-		common_defs::POTION,
 		common_defs::KEY,
 		common_defs::CURSED_APPLE,
+		common_defs::BLESSED_APPLE,
+		common_defs::DRAGONS_HEART,
 
 		common_defs::SWORD,
 		common_defs::BOW,

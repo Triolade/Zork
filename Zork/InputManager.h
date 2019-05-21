@@ -44,11 +44,9 @@ private:
 		{"SOUTH", common_defs::SOUTH},
 		{"EAST", common_defs::EAST},
 		{"WEST", common_defs::WEST},
-		{"UP", common_defs::UP},
-		{"DOWN", common_defs::DOWN},
 
 		// ITEMS
-		{"POTION", common_defs::POTION},
+		{"HEART", common_defs::DRAGONS_HEART},
 		{"KEY", common_defs::KEY},
 		{"APPLE", common_defs::CURSED_APPLE},
 
@@ -63,7 +61,7 @@ private:
 		{"DRAGON", common_defs::DRAGON},
 
 		// CONNECTORS
-		{"WITH", common_defs::WITH},
+		{"DOOR", common_defs::DOOR},
 		{"INTO", common_defs::INTO}
 	};
 

@@ -170,3 +170,19 @@ void Player::dropCurrentWeapon() {
 	currentRoom->putWeapon(equippedWeapon);
 	hasEquippedWeapon = false;
 }
+
+bool Player::canSeeLockedDoor() {
+	return currentRoom->hasLockedDoor();
+}
+
+void Player::openLockedDoor() {
+	currentRoom->openLockedDoor();
+
+	list<Item>::iterator it;
+	for (it = inventory.begin(); it != inventory.end(); ++it) {
+		if (it->getAssociatedToken() == common_defs::KEY) {
+			inventory.erase(it);
+			return;
+		}
+	}
+}

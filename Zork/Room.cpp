@@ -158,3 +158,27 @@ void Room::killEnemy(common_defs::tokens enemy) {
 
 	throw "Enemy not found, this should never happen";
 }
+
+bool Room::hasLockedDoor() {
+	map<common_defs::tokens, Connection>::iterator it = connections.begin();
+	for (pair<common_defs::tokens, Connection> conenction : connections) {
+		if (conenction.second.canBeOpened) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+void Room::openLockedDoor() {
+	map<common_defs::tokens, Connection>::iterator it = connections.begin();
+	while (it != connections.end()) {
+		if (it->second.canBeOpened) {
+			it->second.canBeOpened = false;
+			it->second.accessible = true;
+			return;
+		}
+		++it;
+	}
+	throw "Locked connection not found, this should never happen.";
+}

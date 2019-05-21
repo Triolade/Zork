@@ -19,15 +19,19 @@ private:
 		DUNGEON_ENTRANCE,
 		DUNGEON_HALL,
 		WOLF_DEN,
-		CURSED_APPLE_TREE
+		CURSED_APPLE_TREE,
+		DARK_ROOM,
+		SPHINX_TRIAL,
+		ELF_CAMP,
+		ELF_CHURCH,
+		DRAGONS_LAIR,
+		END
 	};
 
 	map<room, Room> rooms;
 
 	void spawnRooms();
 	void spawnConnections();
-	void spawnItems();
-	void spawnEnemies();
 	void spawnPlayer();
 };
 

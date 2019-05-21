@@ -19,13 +19,12 @@ namespace common_defs {
 		SOUTH,
 		EAST,
 		WEST,
-		UP,
-		DOWN,
 
 		// ITEMS
-		POTION,
+		DRAGONS_HEART,
 		KEY,
 		CURSED_APPLE,
+		BLESSED_APPLE,
 
 		// WEAPONS
 		SWORD,
@@ -38,7 +37,7 @@ namespace common_defs {
 		DRAGON,
 
 		// CONNECTORS
-		WITH,
+		DOOR,
 		INTO
 	};
 }

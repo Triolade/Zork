@@ -61,8 +61,8 @@ Action* Interpreter::interpretTwoTokensAction() {
 	if (tokens[0] == common_defs::GO & Utils::isDirection(tokens[1])) {
 		interpreted_action = ActionFactory::createGoAction(tokens[1]);
 	}
-	else if (tokens[0] == common_defs::OPEN & Utils::isItem(tokens[1])) {
-		interpreted_action = ActionFactory::createOpenAction(tokens[1]);
+	else if (tokens[0] == common_defs::OPEN & tokens[1] == common_defs::DOOR) {
+		interpreted_action = ActionFactory::createOpenAction();
 	}
 	else if (tokens[0] == common_defs::TAKE & Utils::isItem(tokens[1])) {
 		interpreted_action = ActionFactory::createTakeAction(tokens[1]);
@@ -86,14 +86,6 @@ Action* Interpreter::interpretTwoTokensAction() {
 Action* Interpreter::interpretFourTokensAction() {
 	Action* interpreted_action;
 	if (
-		tokens[0] == common_defs::OPEN
-		& Utils::isItem(tokens[1])
-		& tokens[2] == common_defs::WITH
-		& Utils::isItem(tokens[3])
-		) {
-		interpreted_action = ActionFactory::createOpenAction(tokens[1], tokens[3]);
-	}
-	else if (
 		tokens[0] == common_defs::PUT
 		& Utils::isItem(tokens[1])
 		& tokens[2] == common_defs::INTO

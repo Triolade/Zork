@@ -158,6 +158,7 @@
     <ClInclude Include="CheckAction.h" />
     <ClInclude Include="DropAction.h" />
     <ClInclude Include="EmptyAction.h" />
+    <ClInclude Include="EnemyFactory.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="common_defs.h" />
     <ClInclude Include="GoAction.h" />
@@ -167,6 +168,7 @@
     <ClInclude Include="InvalidAction.h" />
     <ClInclude Include="InventoryAction.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemFactory.h" />
     <ClInclude Include="LookAction.h" />
     <ClInclude Include="OpenAction.h" />
     <ClInclude Include="OutputManager.h" />
@@ -174,9 +176,11 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PutAction.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="RoomFactory.h" />
     <ClInclude Include="TakeAction.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Weapon.h" />
+    <ClInclude Include="WeaponFactory.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="Enemy.h" />
   </ItemGroup>
@@ -186,6 +190,7 @@
     <ClCompile Include="CheckAction.cpp" />
     <ClCompile Include="DropAction.cpp" />
     <ClCompile Include="EmptyAction.cpp" />
+    <ClCompile Include="EnemyFactory.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GoAction.cpp" />
     <ClCompile Include="HelpAction.cpp" />
@@ -194,6 +199,7 @@
     <ClCompile Include="InvalidAction.cpp" />
     <ClCompile Include="InventoryAction.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemFactory.cpp" />
     <ClCompile Include="LookAction.cpp" />
     <ClCompile Include="OpenAction.cpp" />
     <ClCompile Include="OutputManager.cpp" />
@@ -206,9 +212,11 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PutAction.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RoomFactory.cpp" />
     <ClCompile Include="TakeAction.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="WeaponFactory.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Zork.cpp" />

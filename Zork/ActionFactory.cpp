@@ -26,7 +26,7 @@ Action* ActionFactory::createGoAction(common_defs::tokens direction)
 	return new GoAction(direction);
 }
 
-Action* ActionFactory::createOpenAction(common_defs::tokens item)
+Action* ActionFactory::createOpenAction()
 {
 	return new OpenAction();
 }
@@ -55,11 +55,6 @@ Action* ActionFactory::createCheckAction(common_defs::tokens item)
 Action* ActionFactory::createAttackAction(common_defs::tokens enemy)
 {
 	return new AttackAction(enemy);
-}
-
-Action* ActionFactory::createOpenAction(common_defs::tokens item, common_defs::tokens opener)
-{
-	return new OpenAction();
 }
 
 Action* ActionFactory::createPutAction(common_defs::tokens item, common_defs::tokens container)

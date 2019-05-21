@@ -38,6 +38,9 @@ public:
 	bool canFindEnemy(common_defs::tokens item);
 	string attack(common_defs::tokens enemy);
 
+	bool canSeeLockedDoor();
+	void openLockedDoor();
+
 
 private:
 	Room* currentRoom;
