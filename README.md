@@ -1,6 +1,6 @@
 # [Zork](https://github.com/mariofv/Zork/)
 
-This project contains a fan game based on the well-known videogame [Zork](https://en.wikipedia.org/wiki/Zork).The project was developed during a week in the access test of the Master 'Advanced Programming for AAA Video Games' of the [UPC School](https://www.talent.upc.edu/ing/).
+This project contains a fan game based on the well-known videogame [Zork](https://en.wikipedia.org/wiki/Zork). The project was developed during a week in the access test of the Master 'Advanced Programming for AAA Video Games' of the [UPC School](https://www.talent.upc.edu/ing/).
 
 # Features
 - RPG based interactive fiction game inspired by the original Zork.
