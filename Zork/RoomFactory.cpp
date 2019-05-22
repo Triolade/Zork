@@ -3,6 +3,9 @@
 #include "WeaponFactory.h"
 #include "EnemyFactory.h"
 #include "ItemFactory.h"
+#include "Container.h"
+#include "SphinxAction.h"
+#include "EndingAction.h"
 
 Room RoomFactory::createDungeonEntrance() {
 	Room dungeonEntrance("Dungeon Entrance");
@@ -40,6 +43,7 @@ Room RoomFactory::createDarkRoom() {
 Room RoomFactory::createSphinxTrial() {
 	Room sphinxTrial("Sphinx Trial");
 	sphinxTrial.setDescription("An enormous sphinx fullfils the room. It is looking directly at your soul.");
+	sphinxTrial.setTriggeredEvent(new SphinxAction());
 	return sphinxTrial;
 }
 
@@ -53,9 +57,11 @@ Room RoomFactory::createElfCamp() {
 
 Room RoomFactory::createElfChurch() {
 	Room elfChurch("Elf Church");
-	elfChurch.setDescription("Room dedicated to the deity of the elves, the great dragon.\nThere is a chalice and a statue to venerate it.");
+	elfChurch.setDescription("Room dedicated to the deity of the elves, the great dragon.\nThere is a statue to venerate it.");
 	Weapon bow = WeaponFactory::createBow();
 	elfChurch.putWeapon(bow);
+	Container chalice("chalice", common_defs::CHALICE);
+	elfChurch.putContainer(chalice);
 	return elfChurch;
 }
 
@@ -69,5 +75,7 @@ Room RoomFactory::createDragonsLair() {
 
 Room RoomFactory::createEndRoom() {
 	Room end("The End");
+	end.setDescription("A voice resonates all across the room:\nHere you will be judged.");
+	end.setTriggeredEvent(new EndingAction());
 	return end;
 }

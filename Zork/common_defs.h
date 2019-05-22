@@ -26,6 +26,9 @@ namespace common_defs {
 		CURSED_APPLE,
 		BLESSED_APPLE,
 
+		// CONTAINERS
+		CHALICE,
+
 		// WEAPONS
 		SWORD,
 		BOW,

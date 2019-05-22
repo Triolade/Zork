@@ -89,7 +89,7 @@ Action* Interpreter::interpretFourTokensAction() {
 		tokens[0] == common_defs::PUT
 		& Utils::isItem(tokens[1])
 		& tokens[2] == common_defs::INTO
-		& Utils::isItem(tokens[3])
+		& Utils::isContainer(tokens[3])
 		) {
 		interpreted_action = ActionFactory::createPutAction(tokens[1], tokens[3]);
 	}

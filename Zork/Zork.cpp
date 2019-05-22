@@ -13,6 +13,9 @@ int main() {
 		introducedAction->execute();
 		OutputManager::instance().printOutput(introducedAction->getGeneratedOutput());
 		delete introducedAction;
+		if (GameManager::instance().isEventPending()) {
+			GameManager::instance().executePendingEvent();
+		}
 	}
 
 	GameManager::instance().endGame();

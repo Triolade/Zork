@@ -59,5 +59,5 @@ Action* ActionFactory::createAttackAction(common_defs::tokens enemy)
 
 Action* ActionFactory::createPutAction(common_defs::tokens item, common_defs::tokens container)
 {
-	return new PutAction();
+	return new PutAction(item,container);
 }

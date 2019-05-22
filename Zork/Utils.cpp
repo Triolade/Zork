@@ -39,6 +39,15 @@ bool Utils::isItem(const common_defs::tokens token) {
 	return find(items.begin(), items.end(), token) != items.end();
 }
 
+bool Utils::isContainer(const common_defs::tokens token) {
+	vector<common_defs::tokens> containers = {
+		common_defs::CHALICE
+	};
+
+	return find(containers.begin(), containers.end(), token) != containers.end();
+}
+
+
 bool Utils::isWeapon(const common_defs::tokens token) {
 	vector<common_defs::tokens> weapons = {
 		common_defs::SWORD,

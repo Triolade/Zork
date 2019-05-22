@@ -50,6 +50,9 @@ private:
 		{"KEY", common_defs::KEY},
 		{"APPLE", common_defs::CURSED_APPLE},
 
+		// CONTAINERS
+		{"CHALICE", common_defs::CHALICE},
+
 		// WEAPONS
 		{"SWORD", common_defs::SWORD},
 		{"BOW", common_defs::BOW},

@@ -2,6 +2,8 @@
 #include "Item.h"
 #include "Weapon.h"
 #include "Enemy.h"
+#include "Container.h"
+#include "Action.h"
 
 class Room
 {
@@ -40,6 +42,10 @@ public:
 	Item takeItem(common_defs::tokens item);
 	bool containsItem(common_defs::tokens item);
 
+	void putContainer(Container container);
+	bool containsContainer(common_defs::tokens container);
+	Container* getContainer(common_defs::tokens container);
+
 	void putWeapon(Weapon weapon);
 	Weapon takeWeapon(common_defs::tokens weapon);
 	bool containsWeapon(common_defs::tokens weapon);
@@ -50,6 +56,9 @@ public:
 	void killEnemy(common_defs::tokens enemy);
 	void dropEnemyLoot(common_defs::tokens enemy);
 
+	bool triggersEvent();
+	void setTriggeredEvent(Action* event);
+	Action* getTriggeredEvent();
 
 private:
 	string name;
@@ -58,10 +67,13 @@ private:
 	map<common_defs::tokens, Connection> connections;
 
 	list<Item> items;
+	list<Container> containers;
 	list<Weapon> weapons;
 	list<Enemy> enemies;
 
 	string getRandomLocator();
+
+	Action* triggeredEvent;
 
 };
 

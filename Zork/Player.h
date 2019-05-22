@@ -23,6 +23,7 @@ public:
 
 	bool canFindItem(common_defs::tokens item);
 	string pickItem(common_defs::tokens item);
+	void pickItem(Item item);
 
 	bool isInInventory(common_defs::tokens item);
 	string dropItem(common_defs::tokens item);
@@ -34,6 +35,7 @@ public:
 	bool hasWeaponEquipped();
 	void dropCurrentWeapon();
 	string pickWeapon(common_defs::tokens weapon);
+	void pickWeapon(Weapon weapon);
 	
 	bool canFindEnemy(common_defs::tokens item);
 	string attack(common_defs::tokens enemy);
@@ -41,6 +43,8 @@ public:
 	bool canSeeLockedDoor();
 	void openLockedDoor();
 
+	bool canFindContainer(common_defs::tokens container);
+	string putItemIntoContainer(common_defs::tokens item, common_defs::tokens container);
 
 private:
 	Room* currentRoom;

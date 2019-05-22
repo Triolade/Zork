@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Player.h"
 #include "Weapon.h"
+#include "BlessedAppleAction.h"
 #include "GameManager.h"
 
 void Player::spawnPlayer() {
@@ -21,7 +22,12 @@ string Player::lookAtDirection(common_defs::tokens direction) {
 }
 
 void Player::moveToDirection(common_defs::tokens direction) {
-	moveToRoom(currentRoom->getRoomInDirection(direction));
+	Room *nextRoom = currentRoom->getRoomInDirection(direction);
+	if (nextRoom->triggersEvent()) {
+		GameManager::instance().setTriggeredEvent(nextRoom->getTriggeredEvent());
+		nextRoom->setTriggeredEvent(NULL);
+	}
+	moveToRoom(nextRoom);
 }
 
 void Player::moveToRoom(Room* nextRoom) {
@@ -38,6 +44,10 @@ string Player::pickItem(common_defs::tokens item) {
 	inventory.push_back(pickedItem);
 
 	return pickedItem.getName();
+}
+
+void Player::pickItem(Item item) {
+	inventory.push_back(item);
 }
 
 bool Player::isInInventory(common_defs::tokens item) {
@@ -135,7 +145,7 @@ string Player::attack(common_defs::tokens enemy) {
 	else {
 		--lifeCounter;
 		if (lifeCounter == 0) {
-			GameManager::instance().setGameOver(true);
+			GameManager::instance().triggerGameEnding(GameManager::end_game_reason::DEATH);
 			battleResult =  "You couldn't defeat the " + e.getName() + "! It attacks you and takes your last life.";
 		}
 		else {
@@ -166,6 +176,16 @@ string Player::pickWeapon(common_defs::tokens item) {
 	return pickedWeapon.getName();
 }
 
+void Player::pickWeapon(Weapon weapon) {
+
+	if (hasEquippedWeapon) {
+		dropCurrentWeapon();
+	}
+
+	hasEquippedWeapon = true;
+	equippedWeapon = weapon;
+}
+
 void Player::dropCurrentWeapon() {
 	currentRoom->putWeapon(equippedWeapon);
 	hasEquippedWeapon = false;
@@ -185,4 +205,33 @@ void Player::openLockedDoor() {
 			return;
 		}
 	}
+}
+
+bool Player::canFindContainer(common_defs::tokens container) {
+	return currentRoom->containsContainer(container);
+}
+
+string Player::putItemIntoContainer(common_defs::tokens item, common_defs::tokens container) {
+	Item requestedItem;
+	std::list<Item>::iterator it;
+	for (it = inventory.begin(); it != inventory.end(); ++it) {
+		if (it->getAssociatedToken() == item) {
+			requestedItem = *it;
+			inventory.erase(it);
+
+			if (item == common_defs::CURSED_APPLE & container == common_defs::CHALICE) {
+				BlessedAppleAction* blessedAppleEvent = new BlessedAppleAction();
+				blessedAppleEvent->execute();
+				string output = blessedAppleEvent->getGeneratedOutput();
+				delete blessedAppleEvent;
+				return output;
+			}
+			else {
+				Container *c = currentRoom->getContainer(container);
+				c->insertItem(requestedItem);
+				return "You put the " + requestedItem.getName() + " into the " + c->getName() + ".";
+			}
+		}
+	}
+
 }

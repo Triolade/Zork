@@ -155,9 +155,12 @@
     <ClInclude Include="Action.h" />
     <ClInclude Include="ActionFactory.h" />
     <ClInclude Include="AttackAction.h" />
+    <ClInclude Include="BlessedAppleAction.h" />
     <ClInclude Include="CheckAction.h" />
+    <ClInclude Include="Container.h" />
     <ClInclude Include="DropAction.h" />
     <ClInclude Include="EmptyAction.h" />
+    <ClInclude Include="EndingAction.h" />
     <ClInclude Include="EnemyFactory.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="common_defs.h" />
@@ -177,6 +180,7 @@
     <ClInclude Include="PutAction.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="RoomFactory.h" />
+    <ClInclude Include="SphinxAction.h" />
     <ClInclude Include="TakeAction.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Weapon.h" />
@@ -187,9 +191,12 @@
   <ItemGroup>
     <ClCompile Include="ActionFactory.cpp" />
     <ClCompile Include="AttackAction.cpp" />
+    <ClCompile Include="BlessedAppleAction.cpp" />
     <ClCompile Include="CheckAction.cpp" />
+    <ClCompile Include="Container.cpp" />
     <ClCompile Include="DropAction.cpp" />
     <ClCompile Include="EmptyAction.cpp" />
+    <ClCompile Include="EndingAction.cpp" />
     <ClCompile Include="EnemyFactory.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GoAction.cpp" />
@@ -213,6 +220,7 @@
     <ClCompile Include="PutAction.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="RoomFactory.cpp" />
+    <ClCompile Include="SphinxAction.cpp" />
     <ClCompile Include="TakeAction.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Weapon.cpp" />

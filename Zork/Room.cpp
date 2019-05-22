@@ -13,15 +13,16 @@ Room::Room(string name) {
 string Room::getDescription() {
 	string extendedDescription = "--" + name + "--" + "\n" + description;
 	for (Item i : items) {
-		
 		extendedDescription = extendedDescription + "\n" + getRandomLocator() + i.getName() + " here.";
 	}
 	for (Weapon w : weapons) {
-
 		extendedDescription = extendedDescription + "\n" + getRandomLocator() + w.getName() + " here.";
 	}
 	for (Enemy e : enemies) {
 		extendedDescription = extendedDescription + "\nA " + e.getName() + " looks at you menacingly.";
+	}
+	for (Container c : containers) {
+		extendedDescription = extendedDescription + "\nThere is " + c.getDescription();
 	}
 	return extendedDescription;
 }
@@ -181,4 +182,42 @@ void Room::openLockedDoor() {
 		++it;
 	}
 	throw "Locked connection not found, this should never happen.";
+}
+
+void Room::putContainer(Container container) {
+	containers.push_back(container);
+}
+
+bool Room::containsContainer(common_defs::tokens container) {
+	list<Container>::iterator it;
+	for (it = containers.begin(); it != containers.end(); ++it) {
+		if (it->getAssociatedToken() == container) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+Container* Room::getContainer(common_defs::tokens container) {
+	list<Container>::iterator it;
+	for (it = containers.begin(); it != containers.end(); ++it) {
+		if (it->getAssociatedToken() == container) {
+			return &*it;
+		}
+	}
+
+	throw "Container not found, this should never happen.";
+}
+
+bool Room::triggersEvent() {
+	return triggeredEvent != NULL;
+}
+
+void Room::setTriggeredEvent(Action* event) {
+	triggeredEvent = event;
+}
+
+Action* Room::getTriggeredEvent() {
+	return triggeredEvent;
 }
