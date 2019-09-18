@@ -1,5 +1,7 @@
 # [Zork](https://github.com/mariofv/Zork/)
 
+![ZorkGif](https://github.com/mariofv/Zork/blob/master/zork.gif)
+
 This project contains a fan game based on the well-known videogame [Zork](https://en.wikipedia.org/wiki/Zork). The project was developed during a week in the access test of the Master 'Advanced Programming for AAA Video Games' of the [UPC School](https://www.talent.upc.edu/ing/).
 
 # Features
